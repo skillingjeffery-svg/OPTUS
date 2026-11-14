@@ -1,11 +1,21 @@
+
 <!DOCTYPE html>
 <html>
-<head><title>Optus - Sign In</title></head>
-<body style="font-family:Arial; padding:20px;">
-  <img src="https://www.optus.com.au/content/dam/optus/images/logo.svg" width="120">
-  <h2>Sign in to My Optus</h2>
-  <input type="text" placeholder="Email or mobile" style="width:100%;padding:10px;margin:10px 0"><br>
-  <input type="password" placeholder="Password" style="width:100%;padding:10px;margin:10px 0"><br>
-  <button style="background:#ED1C24;color:white;padding:10px 20px;border:none">Sign In</button>
+<head>
+    <title>Optus Security Test</title>
+</head>
+<body style="font-family:Arial;padding:20px;">
+    <h2>Optus WebView Security Test</h2>
+    <p id="result">Checking JavaScript bridge...</p>
+
+    <script>
+        if (window.BlobDownloader) {
+            document.getElementById("result").innerText =
+                "SUCCESS: BlobDownloader is accessible!";
+        } else {
+            document.getElementById("result").innerText =
+                "FAILED: BlobDownloader is unavailable.";
+        }
+    </script>
 </body>
 </html>
